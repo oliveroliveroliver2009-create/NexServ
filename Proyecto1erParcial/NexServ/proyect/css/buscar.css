@@ -1,0 +1,205 @@
+/* =========================================================
+   ESTILOS PARA LA PÁGINA DE BÚSQUEDA Y SERVICIOS
+   ========================================================= */
+
+.contenedor-busqueda {
+    width: 95%;
+    max-width: 1300px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Panel Superior de Filtros */
+.panel-filtros {
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.panel-filtros h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.barra-filtros {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.campo-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-busqueda label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.campo-busqueda input {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #ffffff;
+    outline: none;
+    font-size: 14px;
+}
+
+.campo-busqueda input:focus {
+    border-color: #3b82f6;
+}
+
+.btn-filtrar {
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 13px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-filtrar:hover {
+    background: #2563eb;
+}
+
+/* Grilla de Resultados */
+.encabezado-resultados h3 {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjeta individual de profesional */
+.tarjeta-servicio {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+}
+
+.tag-categoria {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.tarjeta-servicio h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.calificacion-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.estrellas {
+    color: #f59e0b;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.puntaje {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.resenas-num {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.ubicacion-texto,
+.descripcion-texto {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+/* Bloque con comentarios de usuarios */
+.bloque-resenas {
+    background: #1e293b;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0 18px 0;
+}
+
+.bloque-resenas h5 {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.comentario {
+    font-size: 12px;
+    color: #e2e8f0;
+    font-style: italic;
+}
+
+.btn-contacto {
+    display: block;
+    text-align: center;
+    background: #22c55e;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-contacto:hover {
+    background: #16a34a;
+}
+
+.sin-resultados {
+    grid-column: 1 / -1;
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .barra-filtros {
+        grid-template-columns: 1fr;
+    }
+}

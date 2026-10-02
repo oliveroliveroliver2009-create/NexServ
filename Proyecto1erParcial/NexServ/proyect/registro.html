@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Negocio | Nextserv</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Next<span>serv</span></div>
+       <nav>
+    <a href="javascript:history.back()">← Volver al inicio</a>
+</nav>
+    </header>
+
+    <main class="contenedor-registro">
+        <div class="tarjeta-registro">
+            <h2>Registra tu Negocio</h2>
+            <p>Completa la información para dar a conocer tus servicios en la plataforma.</p>
+
+            <form id="form-registro" class="form-registro">
+                <div class="campo">
+                    <label for="nombre-negocio">Nombre del Negocio / Empresa</label>
+                    <input type="text" id="nombre-negocio" required placeholder="Ej. Plomería Express">
+                </div>
+
+                <div class="campo-doble">
+                    <div class="campo">
+                        <label for="categoria">Categoría del Servicio</label>
+                        <select id="categoria" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="hogar">Reparaciones del Hogar</option>
+                            <option value="tecnologia">Soporte Técnico / Tecnología</option>
+                            <option value="salud">Salud y Bienestar</option>
+                            <option value="eventos">Eventos y Entretenimiento</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" required inputmode="numeric" pattern="[0-9]*" placeholder="Ej. 5512345678">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo Electrónico de Trabajo</label>
+                    <input type="email" id="correo" required placeholder="contacto@tunegocio.com">
+                </div>
+
+                <div class="campo">
+                    <label for="direccion">Ubicación / Dirección</label>
+                    <input type="text" id="direccion" required placeholder="Ciudad, Estado o Dirección completa">
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción de los Servicios</label>
+                    <textarea id="descripcion" rows="3" placeholder="Describe brevemente lo que ofrece tu negocio..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar-registro">Guardar y Publicar Negocio</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Conexión al archivo de lógica -->
+    <script src="registro.js"></script>
+</body>
+</html>

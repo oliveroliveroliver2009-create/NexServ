@@ -1,0 +1,115 @@
+/* =========================================================
+   ESTILOS EXCLUSIVOS PARA LA PÁGINA DE REGISTRO
+   ========================================================= */
+
+.contenedor-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.tarjeta-registro {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-registro h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.tarjeta-registro p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Campos del formulario */
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.campo select option {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* Botón de envío */
+.btn-enviar-registro {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-enviar-registro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .campo-doble {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjeta-registro {
+        padding: 25px;
+    }
+}

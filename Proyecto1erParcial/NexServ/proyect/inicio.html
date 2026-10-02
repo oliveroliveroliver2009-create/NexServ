@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!-- Le indica al navegador que este documento utiliza HTML5. -->
+
+<html lang="es">
+<!-- <html> es la etiqueta raíz de toda la página.
+     lang="es" indica que el idioma principal de la página es español. -->
+
+<head>
+<!-- <head> contiene información de configuración de la página que normalmente no se muestra directamente. -->
+
+    <meta charset="UTF-8">
+    <!-- <meta> proporciona información sobre el documento.
+         charset="UTF-8" permite utilizar correctamente letras, acentos, ñ, símbolos, etc. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte a dispositivos móviles.
+         name="viewport" indica que estamos configurando el área visible.
+         width=device-width hace que el ancho sea igual al ancho de la pantalla.
+         initial-scale=1.0 establece el zoom inicial en 100%. -->
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- <link> conecta este HTML con otro archivo.
+         rel="stylesheet" indica que el archivo es una hoja de estilos CSS.
+         href="estilos.css" indica el nombre/ruta del archivo CSS. -->
+
+    <title>Nextserv - Servicios Locales</title>
+    <!-- <title> establece el título que aparece en la pestaña del navegador. -->
+
+</head>
+<!-- Cierra la sección <head>. -->
+
+
+<body>
+<!-- <body> contiene todo el contenido visible de la página. -->
+
+
+    <!-- =========================================================
+       1. ENCABEZADO Y BARRA NAVEGACIÓN
+       ========================================================= -->
+    
+
+
+    <header>
+    <!-- <header> representa el encabezado de la página.
+         Normalmente contiene logo, menú, buscador, etc. -->
+
+
+        <div class="logo">Next <span>serv</span></div>
+        <!-- <div> es un contenedor genérico.
+             class="logo" le asigna la clase CSS llamada "logo".
+             "Next" es texto visible.
+             <span> permite aplicar un estilo diferente solamente a "serv".
+             </span> cierra el <span>.
+             </div> cierra el contenedor. -->
+
+
+        <nav>
+        <!-- <nav> contiene los enlaces de navegación principales. -->
+
+
+            <a href="#inicio">Inicio</a> |
+            <!-- <a> crea un enlace.
+                 href="#inicio" indica que al hacer clic se irá al elemento cuyo id sea "inicio".
+                 # significa que estamos buscando un identificador (id).
+                 "Inicio" es el texto que verá el usuario.
+                 | es simplemente un separador visual. -->
+
+
+            <a href="#nosotros">Nosotros</a> |
+            <!-- Lleva al elemento que tenga id="nosotros". -->
+
+
+            <a href="#servicios">Servicios</a> |
+            <!-- Lleva al elemento que tenga id="servicios". -->
+
+
+            <a href="#comofunciona">Cómo funciona</a> |
+            <!-- Lleva al elemento que tenga id="comofunciona". -->
+
+
+            <a href="#ofreces">¿Ofreces un servicio?</a> |
+            <!-- Lleva al elemento que tenga id="ofreces". -->
+
+
+            <a href="#contacto">Contacto</a>
+            <!-- Busca un elemento cuyo id sea "contacto".
+                 IMPORTANTE: en tu código actual no existe una sección con id="contacto",
+                 por lo que este enlace no encontrará una sección. -->
+
+        </nav>
+        <!-- Cierra el menú de navegación. -->
+
+
+        <!-- Buscador pequeño superior del header -->
+        <!-- Comentario que explica la finalidad del siguiente bloque. -->
+
+
+        <div class="header-search">
+        <!-- Contenedor del buscador superior.
+             class="header-search" permite darle estilos mediante CSS. -->
+
+
+            <input type="text" placeholder="🔍 buscar tecnico,plomero">
+            <!-- <input> crea un campo donde el usuario puede escribir.
+                 type="text" indica que es un campo de texto.
+                 placeholder muestra un texto de ayuda mientras el campo está vacío.
+                 🔍 es un emoji utilizado como icono de búsqueda. -->
+
+        </div>
+        <!-- Cierra el contenedor del buscador. -->
+
+
+    </header>
+    <!-- Cierra el encabezado. -->
+
+
+    <main>
+    <!-- <main> contiene el contenido principal de la página. -->
+
+
+        <!-- =========================================================
+            2. SECCIÓN 1: INICIO (HERO CON DEGRADADO Y BÚSQUEDA)
+            ========================================================= -->
+
+
+        <section id="inicio">
+        <!-- <section> crea una sección temática.
+             id="inicio" le da un identificador único.
+             Los enlaces href="#inicio" pueden llegar hasta aquí. -->
+
+
+            <div class="hero-top-bar">
+            <!-- Contenedor para la parte superior del área principal.
+                 class="hero-top-bar" permite modificar su apariencia con CSS. -->
+
+
+                <button type="button"
+                        class="btn-registrar"
+                        onclick="window.location.href='registro.html'">
+                    🛒 registrar negocio
+                </button>
+                <!-- <button> crea un botón.
+                     type="button" indica que es un botón normal.
+                     class="btn-registrar" permite aplicarle CSS.
+                     onclick ejecuta JavaScript cuando se hace clic.
+                     
+                     window representa la ventana/navegador.
+                     location representa la dirección actual.
+                     href cambia la dirección.
+                     'registro.html' es la página a la que se redirige.
+                     
+                     En otras palabras:
+                     al hacer clic -> abrir registro.html. -->
+
+            </div>
+            <!-- Cierra hero-top-bar. -->
+
+
+            <div class="hero-content">
+            <!-- Contenedor del contenido principal del Hero. -->
+
+
+                <h1>Nextserv</h1>
+                <!-- <h1> es el encabezado principal de la página.
+                     Normalmente debe existir un título principal. -->
+
+
+                <h2>
+                    Encuentra el servicio que necesitas
+                    <span class="texto-morado">cerca</span>
+                    <span class="texto-azul">de ti</span>
+                </h2>
+                <!-- <h2> es un encabezado de segundo nivel.
+                     Los <span> permiten aplicar estilos diferentes a determinadas palabras.
+                     texto-morado y texto-azul son clases CSS. -->
+
+
+                <div class="caja-busqueda-hero">
+                <!-- Contenedor del buscador principal. -->
+
+
+                    <span>🔍 </span>
+                    <!-- Muestra el icono de búsqueda. -->
+
+
+                    <input
+                        type="text"
+                        id="input-busqueda-inicio"
+                        placeholder="¿Que servicios o profesional buscas hoy?">
+                    <!-- Campo de texto.
+                         type="text" significa entrada de texto.
+                         id identifica específicamente este input.
+                         JavaScript utilizará este id para obtener lo escrito.
+                         placeholder muestra una sugerencia. -->
+
+
+                    <button
+                        type="button"
+                        class="btn-buscar-ahora"
+                        onclick="buscarDesdeInicio()">
+                        buscar Ahora
+                    </button>
+                    <!-- Botón que ejecuta la función buscarDesdeInicio().
+                         La función está definida al final del documento en JavaScript. -->
+
+                </div>
+                <!-- Cierra la caja de búsqueda. -->
+
+
+                <p>
+                    Conectamos a las personas con los mejores servicios locales,
+                    de forma fácil, rápida y segura.
+                </p>
+                <!-- <p> representa un párrafo. -->
+
+
+                <br>
+                <!-- <br> provoca un salto de línea.
+                     Es una etiqueta que no necesita </br>. -->
+
+
+                <button type="button" class="btn-conoce-mas">
+                    Conoce más &rarr;
+                </button>
+                <!-- Botón "Conoce más".
+                     &rarr; es una entidad HTML que representa una flecha hacia la derecha. -->
+
+
+            </div>
+            <!-- Cierra hero-content. -->
+
+
+            <img
+                id="foto-inicio"
+                src="img/servicios.png "
+                width="860"
+                height="500"
+                alt="Servicios disponibles">
+                
+            <!-- <img> muestra una imagen.
+                 id="foto-inicio" identifica la imagen.
+                 src indica dónde está la imagen.
+                 servicios.png es el archivo de imagen.
+                 width establece el ancho.
+                 height establece el alto.
+                 alt contiene un texto alternativo para accesibilidad
+                 o cuando la imagen no puede cargarse. -->
+
+
+        </section>
+        <!-- Cierra la sección de inicio. -->
+
+
+        <!-- =========================================================
+             SECCIÓN 2: NOSOTROS
+             ========================================================= -->
+
+
+        <section id="nosotros">
+        <!-- Sección "Nosotros".
+             id="nosotros" permite llegar aquí mediante #nosotros. -->
+
+
+            <div class="nosotros-contenedor">
+            <!-- Contenedor general de esta sección. -->
+
+
+                <p><strong>NOSOTROS</strong></p>
+                <!-- <strong> da importancia semántica al texto y normalmente aparece en negrita. -->
+
+
+                <h2>transformando la forma de encontrar ayuda local</h2>
+                <!-- Título de segundo nivel. -->
+
+
+                <div class="nosotros-grid">
+                <!-- Contenedor que probablemente será organizado mediante CSS Grid. -->
+
+
+                    <div class="nosotros-texto">
+                    <!-- Contenedor para los textos descriptivos. -->
+
+
+                        <p>
+                            Haz es una plataforma tecnologica creada para conectar
+                            de forma aguil y transparante a personas que requieren
+                            asisstencia en el hogar o trabajo con expertos calificados
+                            en su comunidad.
+                        </p>
+                        <!-- Párrafo descriptivo. -->
+
+
+                        <p>
+                            <strong>seguridad prin:</strong>
+                            impulsamos la economia local drindando visibilidad a
+                            profecionales especialistas, electricistas plomeros,
+                            mecanicos y mas, eliminando intermediarios inecesario.
+                        </p>
+                        <!-- Otro párrafo.
+                             <strong> resalta "seguridad prin". -->
+
+                    </div>
+                    <!-- Cierra nosotros-texto. -->
+
+
+                    <div class="nosotros-tarjetas">
+                    <!-- Contenedor de las tarjetas. -->
+
+
+                        <div class="tarjeta-oscura">
+                        <!-- Primera tarjeta. -->
+
+
+                            <h3>📍 Cercania total</h3>
+                            <!-- <h3> es un título de tercer nivel.
+                                 📍 es un emoji. -->
+
+
+                            <p>
+                                El algoritmo basado en geolocalizacionpara conectarte
+                                con profesionales a minutos de ti.
+                            </p>
+                            <!-- Descripción de la tarjeta. -->
+
+                        </div>
+                        <!-- Cierra la primera tarjeta. -->
+
+
+                        <div class="tarjeta-oscura">
+                        <!-- Segunda tarjeta. -->
+
+
+                            <h3>👤 Expertos Calificados</h3>
+                            <!-- Título de la segunda tarjeta. -->
+
+
+                            <p>
+                                Conecta con especialistas verificados para tu hogar
+                                o empresa de manera directa.
+                            </p>
+                            <!-- Descripción. -->
+
+
+                        </div>
+                        <!-- Cierra la segunda tarjeta. -->
+
+
+                    </div>
+                    <!-- Cierra nosotros-tarjetas. -->
+
+                </div>
+                <!-- Cierra nosotros-grid. -->
+
+
+                <div class="estadisticas-grid">
+                <!-- Contenedor de las estadísticas. -->
+
+
+                    <div class="pildora-stat">
+                    <!-- Primera estadística. -->
+
+
+                        <span class="stat-numero">+1200</span>
+                        <!-- <span> permite aplicar estilos solamente al número. -->
+
+
+                        <span class="stat-etiqueta">
+                            (Tecnicos/servicios registrados)
+                        </span>
+                        <!-- Texto descriptivo de la estadística. -->
+
+
+                    </div>
+                    <!-- Cierra la estadística. -->
+
+
+                    <div class="pildora-stat">
+                        <span class="stat-numero">98%</span>
+                        <span class="stat-etiqueta">
+                            (clientes satisfechos)
+                        </span>
+                    </div>
+                    <!-- Segunda estadística. -->
+
+
+                    <div class="pildora-stat">
+                        <span class="stat-numero">15 min</span>
+                        <span class="stat-etiqueta">
+                            (Tiempo medio de respuesta)
+                        </span>
+                    </div>
+                    <!-- Tercera estadística. -->
+
+
+                    <div class="pildora-stat">
+                        <span class="stat-numero">24/7</span>
+                        <span class="stat-etiqueta">
+                            (Soporte disponible)
+                        </span>
+                    </div>
+                    <!-- Cuarta estadística. -->
+
+
+                </div>
+                <!-- Cierra estadisticas-grid. -->
+
+
+            </div>
+            <!-- Cierra nosotros-contenedor. -->
+
+
+        </section>
+        <!-- Cierra sección Nosotros. -->
+
+
+        <!-- =========================================================
+             SECCIÓN 3: SERVICIOS
+             ========================================================= -->
+
+
+        <section id="servicios">
+        <!-- Sección de servicios. -->
+
+
+            <p><strong>SERVICIOS</strong></p>
+            <!-- Etiqueta de identificación de la sección. -->
+
+
+            <h2>¿Qué servicios puedes encontrar?</h2>
+            <!-- Título. -->
+
+
+            <p>
+                Explora una amplia variedad de servicios en diferentes categorías.
+            </p>
+            <!-- Descripción. -->
+
+
+            <div class="servicios-grid">
+            <!-- Contenedor de botones.
+                 El nombre "grid" sugiere que CSS puede utilizar display:grid. -->
+
+
+                <button type="button">Electricidad</button>
+                <!-- Botón de la categoría Electricidad. -->
+
+
+                <button type="button">Plomería</button>
+                <!-- Botón de Plomería. -->
+
+
+                <button type="button">Carpintería</button>
+                <!-- Botón de Carpintería. -->
+
+
+                <button type="button">Gas</button>
+                <!-- Botón de Gas. -->
+
+
+                <button type="button">Comida</button>
+                <!-- Botón de Comida. -->
+
+
+                <button type="button">Limpieza</button>
+                <!-- Botón de Limpieza. -->
+
+
+                <button type="button">Mecánica</button>
+                <!-- Botón de Mecánica. -->
+
+
+                <button type="button">Tecnología</button>
+                <!-- Botón de Tecnología. -->
+
+
+            </div>
+            <!-- Cierra servicios-grid. -->
+
+
+        </section>
+        <!-- Cierra servicios. -->
+
+
+        <!-- =========================================================
+             SECCIÓN 4: CÓMO FUNCIONA
+             ========================================================= -->
+
+
+        <section id="comofunciona">
+        <!-- Sección que explica el funcionamiento. -->
+
+
+            <p><strong>CÓMO FUNCIONA</strong></p>
+            <!-- Nombre de la sección. -->
+
+
+            <h2>Es muy fácil</h2>
+            <!-- Título. -->
+
+
+            <div class="pasos-container">
+            <!-- Contenedor de los pasos. -->
+
+
+                <article>
+                <!-- <article> representa contenido independiente o una unidad de información. -->
+
+
+                    <h3>1. Busca</h3>
+                    <!-- Primer paso. -->
+
+
+                    <p>
+                        Encuentra el servicio que necesitas en tu zona.
+                    </p>
+                    <!-- Explicación. -->
+
+
+                </article>
+                <!-- Cierra el primer artículo. -->
+
+
+                <article>
+                    <h3>2. Encuentra</h3>
+                    <p>
+                        Consulta los servicios disponibles cerca de ti.
+                    </p>
+                </article>
+                <!-- Segundo paso. -->
+
+
+                <article>
+                    <h3>3. Contacta</h3>
+                    <p>
+                        Elige un proveedor y ponte en contacto con él.
+                    </p>
+                </article>
+                <!-- Tercer paso. -->
+
+
+            </div>
+            <!-- Cierra pasos-container. -->
+
+
+            <br>
+            <!-- Salto de línea. -->
+
+
+            <img
+                id="foto-inicio"
+                src="img/pasos.png"
+                width="870"
+                height="450"
+                alt="Pasos a seguir">
+            <!-- Muestra la imagen pasos.png.
+                 IMPORTANTE: estás reutilizando id="foto-inicio".
+                 Los id deberían ser únicos en una página.
+                 Sería mejor utilizar algo como id="foto-pasos". -->
+
+
+        </section>
+        <!-- Cierra Cómo funciona. -->
+
+
+        <!-- =========================================================
+             SECCIÓN 5: REGISTRO DE NEGOCIO Y BENEFICIOS
+             ========================================================= -->
+
+
+        <section id="ofreces">
+        <!-- Sección para proveedores de servicios. -->
+
+
+            <div>
+            <!-- Contenedor del primer bloque. -->
+
+
+                <p><strong>¿OFRECES UN SERVICIO?</strong></p>
+                <!-- Texto destacado. -->
+
+
+                <h2>Registra tu negocio en Nextserv</h2>
+                <!-- Título. -->
+
+
+                <p>
+                    Si tienes un negocio o realizas algún servicio, únete a nuestra
+                    plataforma y permite que más personas puedan encontrar tus servicios.
+                </p>
+                <!-- Explicación. -->
+
+
+                <br>
+                <!-- Salto de línea. -->
+
+
+                <button
+                    type="button"
+                    class="btn-conoce-mas"
+                    onclick="window.location.href='registro.html'">
+                    Más información &rarr;
+                </button>
+                <!-- Botón que redirige a registro.html al hacer clic. -->
+
+
+            </div>
+            <!-- Cierra el primer bloque. -->
+
+
+            <br>
+            <!-- Salto de línea. -->
+
+
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <!-- <hr> crea una línea horizontal.
+                 style contiene CSS directamente dentro del HTML.
+                 border-color cambia el color del borde.
+                 rgba() representa un color con transparencia:
+                 R = rojo
+                 G = verde
+                 B = azul
+                 A = transparencia.
+                 0.1 significa aproximadamente 10% de opacidad. -->
+
+
+            <br>
+            <!-- Otro salto de línea. -->
+
+
+            <div>
+            <!-- Segundo bloque de la sección. -->
+
+
+                <p><strong>BENEFICIOS</strong></p>
+                <!-- Título pequeño. -->
+
+
+                <h2>¿Por qué elegir Nextserv?</h2>
+                <!-- Encabezado. -->
+
+
+                <ul>
+                <!-- <ul> crea una lista no ordenada.
+                     Los elementos normalmente aparecen con viñetas. -->
+
+
+                    <li>Encuentra servicios cerca de ti.</li>
+                    <!-- <li> representa un elemento de una lista. -->
+
+
+                    <li>Diferentes categorías de servicios.</li>
+
+
+                    <li>Fácil de utilizar.</li>
+
+
+                    <li>Ayuda a los negocios a conseguir clientes.</li>
+
+
+                    <li>Permite conocer información de los proveedores.</li>
+
+
+                </ul>
+                <!-- Cierra la lista. -->
+
+
+            </div>
+            <!-- Cierra el segundo bloque. -->
+
+
+        </section>
+        <!-- Cierra la sección de registro/beneficios. -->
+
+
+    </main>
+    <!-- Cierra el contenido principal. -->
+
+
+    <!-- =========================================================
+         PIE DE PÁGINA
+         ========================================================= -->
+
+
+    <footer>
+    <!-- <footer> representa el pie de página. -->
+
+
+        <div>
+        <!-- Contenedor del nombre de la empresa. -->
+
+
+            <h3>Nextserv</h3>
+            <!-- Nombre. -->
+
+
+            <p>Encuentra lo que necesitas.</p>
+            <!-- Eslogan/descripción. -->
+
+
+        </div>
+        <!-- Cierra el contenedor. -->
+
+
+        <br>
+        <!-- Salto de línea. -->
+
+
+        <div>
+        <!-- Contenedor de enlaces. -->
+
+
+            <a href="#inicio">Inicio</a> |
+            <!-- Enlace interno hacia #inicio. -->
+
+
+            <a href="#nosotros">Nosotros</a> |
+            <!-- Enlace interno hacia #nosotros. -->
+
+
+            <a href="#servicios">Servicios</a> |
+            <!-- Enlace interno hacia #servicios. -->
+
+
+            <a href="#comofunciona">Cómo funciona</a> |
+            <!-- Enlace interno hacia #comofunciona. -->
+
+
+            <a href="#ofreces">¿Ofreces un servicio?</a> |
+            <!-- Enlace interno hacia #ofreces. -->
+
+
+            <a href="#contacto">Contacto</a>
+            <!-- Enlace hacia #contacto.
+                 Actualmente no existe id="contacto" en tu HTML. -->
+
+
+        </div>
+        <!-- Cierra los enlaces. -->
+
+
+        <br>
+        <!-- Salto de línea. -->
+
+
+        <div>
+        <!-- Contenedor de redes sociales. -->
+
+
+            <p>
+                <strong>Síguenos: </strong>
+                <!-- <strong> resalta el texto. -->
+
+
+                Facebook:
+                <!-- Nombre de la red social. -->
+
+
+                <a
+                    href="https://www.facebook.com/profile.php?viewas=&id=61594994421581&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Nex Serv
+                </a>
+                <!-- href contiene la dirección de Facebook.
+                     target="_blank" abre el enlace en otra pestaña.
+                     rel="noopener noreferrer" mejora la seguridad al abrir
+                     páginas externas mediante target="_blank". -->
+
+
+                |
+                <!-- Separador. -->
+
+
+                Instagram:
+                <a
+                    href="https://www.instagram.com/NexServ_Group"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    NexServ_Group
+                </a>
+                <!-- Enlace a Instagram. -->
+
+
+                |
+                <!-- Separador. -->
+
+
+                YouTube:
+                <a
+                    href="https://www.youtube.com/@GetNexServ"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GetNexServ
+                </a>
+                <!-- Enlace a YouTube. -->
+
+
+                |
+                <!-- Separador. -->
+
+
+                TikTok:
+                <a
+                    href="https://www.tiktok.com/@nexserv6"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    NexServ6
+                </a>
+                <!-- Enlace a TikTok. -->
+
+
+            </p>
+            <!-- Cierra el párrafo de redes sociales. -->
+
+
+        </div>
+        <!-- Cierra el contenedor de redes. -->
+
+
+        <br>
+        <!-- Salto de línea. -->
+
+
+        <div>
+        <!-- Contenedor del copyright. -->
+
+
+            <p>
+                &copy; 2026 Nextserv. Todos los derechos reservados.
+            </p>
+            <!-- &copy; es una entidad HTML que muestra el símbolo ©.
+                 2026 es el año.
+                 El resto es texto normal. -->
+
+
+        </div>
+        <!-- Cierra el contenedor. -->
+
+
+    </footer>
+    <!-- Cierra el pie de página. -->
+
+
+    <script>
+    // <script> indica que a continuación se escribirá JavaScript.
+    // JavaScript permite agregar comportamiento e interacción a la página.
+
+
+        function buscarDesdeInicio() {
+        // "function" crea una función.
+        // "buscarDesdeInicio" es el nombre de la función.
+        // Los paréntesis () contienen parámetros; aquí no necesitamos ninguno.
+        // { abre el bloque de instrucciones de la función.
+
+
+            const termino =
+                document.getElementById('input-busqueda-inicio').value;
+            // const crea una variable cuyo valor no se puede reasignar.
+            // "termino" almacenará lo que escribió el usuario.
+            //
+            // document representa el documento HTML.
+            // getElementById() busca un elemento mediante su id.
+            // 'input-busqueda-inicio' coincide con:
+            // id="input-busqueda-inicio"
+            //
+            // .value obtiene el texto escrito dentro del input.
+
+
+            if (termino.trim() !== '') {
+            // if significa "si".
+            //
+            // termino.trim() elimina espacios al principio y al final.
+            //
+            // !== significa "NO es estrictamente igual a".
+            //
+            // '' representa una cadena de texto vacía.
+            //
+            // Por lo tanto:
+            // si el usuario escribió algo diferente de vacío,
+            // se ejecutará el código dentro de { }.
+
+
+                window.location.href =
+                    `buscar.html?q=${encodeURIComponent(termino)}`;
+                // window representa la ventana del navegador.
+                //
+                // location representa la dirección actual.
+                //
+                // href permite cambiar la dirección.
+                //
+                // ` ` son backticks o comillas invertidas.
+                // Permiten crear un texto dinámico.
+                //
+                // buscar.html es la página a la que se enviará al usuario.
+                //
+                // ? inicia los parámetros de la URL.
+                //
+                // q= significa que estamos enviando un parámetro llamado "q".
+                //
+                // ${...} permite insertar un valor dentro del texto.
+                //
+                // encodeURIComponent() convierte caracteres especiales
+                // para que puedan enviarse correctamente dentro de una URL.
+                //
+                // Ejemplo:
+                // Si el usuario escribe:
+                // "plomero cerca"
+                //
+                // se podría generar:
+                // buscar.html?q=plomero%20cerca
+
+
+            } else {
+            // else significa "si no".
+            // Se ejecuta cuando la condición del if es falsa.
+
+
+                alert(
+                    "Por favor, escribe un servicio antes de buscar."
+                );
+                // alert() muestra una ventana emergente con un mensaje.
+
+
+            }
+            // Cierra el bloque del else.
+
+
+        }
+        // Cierra la función buscarDesdeInicio.
+
+
+    </script>
+    <!-- Cierra JavaScript. -->
+
+
+</body>
+<!-- Cierra el contenido visible de la página. -->
+
+
+</html>
+<!-- Cierra el documento HTML completo. -->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Servicios | Nextserv</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="buscar.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Next<span>serv</span></div>
+        <nav>
+            <a href="javascript:history.back()">← Volver al Inicio</a>
+            <a href="registro.html" class="btn-registrar">Registrar Negocio</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-busqueda">
+        <section class="panel-filtros">
+            <h2>Buscar Profesionales</h2>
+            
+            <form id="form-busqueda-interna" class="barra-filtros">
+                <div class="campo-busqueda">
+                    <label for="input-servicio">Servicio o Especialidad</label>
+                    <input type="text" id="input-servicio" placeholder="Ej. Plomero, Electricista...">
+                </div>
+
+                <div class="campo-busqueda">
+                    <label for="input-ubicacion">Ubicación</label>
+                    <input type="text" id="input-ubicacion" placeholder="Tu ciudad o código postal">
+                </div>
+
+                <button type="submit" class="btn-filtrar">Filtrar</button>
+            </form>
+        </section>
+
+        <!-- Resultados -->
+        <section class="seccion-resultados">
+            <div class="encabezado-resultados">
+                <h3 id="contador-resultados">Cargando servicios disponibles...</h3>
+            </div>
+
+            <!-- Aquí se renderizan los servicios si existen -->
+            <div id="grid-resultados" class="grid-servicios"></div>
+
+            <!-- SECCIÓN: SIN RESULTADOS Y SUGERENCIAS (Oculta por defecto) -->
+            <div id="mensaje-sin-resultados" style="display: none; text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+                <h2 style="color: #ff6b6b;">No hay servicios disponibles todavía 😕</h2>
+                <p>Aún no contamos con profesionales para esta categoría. ¡Pero puedes sugerirnos este servicio para agregarlo pronto!</p>
+                
+                <form id="form-sugerencia" style="margin-top: 1.5rem;">
+                    <input type="text" id="input-sugerencia" placeholder="¿Qué servicio buscabas?" required style="padding: 10px; width: 60%; max-width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+                    <button type="submit" class="btn-buscar-ahora" style="padding: 10px 20px; margin-left: 10px; cursor: pointer;">Enviar Sugerencia</button>
+                </form>
+
+                <p id="mensaje-exito-sugerencia" style="display:none; color: #4ade80; margin-top: 15px; font-weight: bold;">¡Gracias! Hemos recibido tu sugerencia y trabajaremos para incluirla pronto.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="buscar.js"></script>
+</body>
+</html>

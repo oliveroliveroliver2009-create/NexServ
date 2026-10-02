@@ -1,0 +1,514 @@
+/* =========================================================
+   1. VARIABLES DE DISEÑO Y CONFIGURACIÓN GENERAL
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Paleta de Colores Corporativa */
+    --bg-dark: #0d1b3a;
+    --bg-card: #0f172a;
+    --bg-section: #1e293b;
+    --blue-primary: #0052cc;
+    --blue-accent: #3b82f6;
+    --blue-hover: #2563eb;
+    --green-neon: #22c55e;
+    --purple-neon: #c084fc;
+    --text-white: #ffffff;
+    --text-muted: #cbd5e1;
+    
+    /* Efectos y Radios */
+    --radius-lg: 20px;
+    --radius-pill: 50px;
+    --shadow-glow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   2. ENCABEZADO SUPERIOR (HEADER Y NAVEGACIÓN)
+   ========================================================= */
+header {
+    background: linear-gradient(90deg, #6d28d9 0%, #2563eb 50%, #0891b2 100%);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Logo Nextserv */
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--green-neon);
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+/* Menú de navegación principal */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--green-neon);
+    transform: translateY(-1px);
+}
+
+/* Buscador en Header */
+.header-search {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-pill);
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition-fast);
+}
+
+.header-search:focus-within {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--text-white);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.header-search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    font-size: 13px;
+    width: 190px;
+}
+
+.header-search input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Botón Registrar Negocio */
+.btn-registrar {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: var(--transition-fast);
+}
+
+.btn-registrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+/* =========================================================
+   3. SECCIÓN HERO (INICIO)
+   ========================================================= */
+#inicio {
+    background: 
+        radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.85) 0%, transparent 22%),
+        radial-gradient(circle at 88% 70%, rgba(34, 197, 94, 0.85) 0%, transparent 24%),
+        radial-gradient(circle at 70% 60%, rgba(37, 99, 235, 0.9) 0%, transparent 25%),
+        linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #1e3a8a 100%);
+    padding: 60px 5%;
+    border-radius: 0 0 35px 35px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+#inicio h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+#inicio h2 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+}
+
+.texto-morado {
+    color: var(--purple-neon);
+    text-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+}
+
+.texto-azul {
+    color: #60a5fa;
+}
+
+/* Buscador Grande en Hero */
+.caja-busqueda-hero {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: var(--radius-pill);
+    padding: 6px 8px 6px 22px;
+    display: flex;
+    align-items: center;
+    max-width: 650px;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.caja-busqueda-hero input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 15px;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.btn-buscar-ahora {
+    background-color: var(--blue-accent);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 28px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+.btn-buscar-ahora:hover {
+    background-color: var(--blue-hover);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-conoce-mas {
+    background-color: var(--blue-accent);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 32px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-conoce-mas:hover {
+    background-color: var(--blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+#foto-inicio {
+    display: block;
+    margin: 35px auto 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   4. SECCIÓN NOSOTROS (ANCHO AMPLIO Y SIMÉTRICO)
+   ========================================================= */
+#nosotros {
+    background-color: var(--blue-primary);
+    padding: 60px 40px;
+    width: 95%;
+    max-width: 1400px; /* Ancho amplio sin deformar pantallas ultrawide */
+    margin: 40px auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glow);
+}
+
+.nosotros-contenedor {
+    width: 100%;
+}
+
+#nosotros h2 {
+    font-size: 34px;
+    color: var(--text-white);
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 35px;
+}
+
+.nosotros-texto p {
+    font-size: 15px;
+    margin-bottom: 16px;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+/* Tarjetas Oscuras dentro de Nosotros */
+.tarjeta-oscura {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    color: var(--text-white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    transition: var(--transition-fast);
+}
+
+.tarjeta-oscura:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.tarjeta-oscura h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Grilla de Métricas en 4 Columnas Exactas */
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.pildora-stat {
+    background: linear-gradient(145deg, #0f172a, #1e1b4b);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+    padding: 22px 15px;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.pildora-stat:hover {
+    transform: translateY(-3px);
+    border-color: var(--blue-accent);
+}
+
+.stat-numero {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-white);
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.stat-etiqueta {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* =========================================================
+   5. SECCIONES GENERALES (SERVICIOS, CÓMO FUNCIONA, REGISTRO)
+   ========================================================= */
+section {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--bg-section);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Botones de Categorías de Servicios */
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.servicios-grid button {
+    background-color: var(--blue-accent);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 26px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.servicios-grid button:hover {
+    background-color: var(--blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Tarjetas de Cómo Funciona */
+.pasos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 25px;
+}
+
+article {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 16px;
+    border-left: 4px solid var(--blue-accent);
+    transition: var(--transition-fast);
+}
+
+article:hover {
+    transform: translateY(-3px);
+    background: #152238;
+}
+
+article h3 {
+    color: #60a5fa;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Beneficios */
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 15px;
+}
+
+ul li::before {
+    content: "✓ ";
+    color: var(--green-neon);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* =========================================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================================= */
+footer {
+    background-color: #050b14;
+    padding: 50px 20px;
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--text-white);
+    text-decoration: underline;
+}
+
+/* =========================================================
+   7. ADAPTACIÓN RESPONSIVE (MÓVILES Y TABLETS)
+   ========================================================= */
+@media (max-width: 992px) {
+    .nosotros-grid, 
+    .pasos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .estadisticas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    #inicio h1 {
+        font-size: 32px;
+    }
+
+    #inicio h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .estadisticas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caja-busqueda-hero {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .btn-buscar-ahora {
+        width: 100%;
+    }
+}
